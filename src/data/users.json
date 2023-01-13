@@ -1,7 +1,13 @@
 [
     {
-        "user": "EnerBit",
-        "passWord":"3006109815",
+        "name": "EnerBit",
+        "passWord":"0000001",
         "type": "administrator"
+    },
+    {
+        "name": "David",
+        "passWord":"1234567",
+        "type": "user"
     }
+
 ]

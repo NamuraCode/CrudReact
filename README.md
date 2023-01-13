@@ -1,13 +1,8 @@
 # Project commands 
 
-
+* Comands for running project
 
 ### `npm start`
-
-### `npm test`
-
-### `npm run build`
-
 
 
 
