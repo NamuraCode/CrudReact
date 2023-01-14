@@ -1,59 +1,62 @@
 import * as React from 'react'
+import bcrypt from "bcryptjs-react";
 import db from '../../data/users.json'
 import User from '../../models/User'
-// import fs from 'fs'
 
-function Login(){
+function Login() {
 
     const [userName, setUserName] = React.useState("")
     const [userPassword, setUserPassword] = React.useState("")
 
-    function verifySession(event:React.SyntheticEvent<HTMLFormElement>){
+    function verifySession(event: React.SyntheticEvent<HTMLFormElement>) {
         let userLogin: User
-        db.forEach((item)=>{
-            if(item.name === userName && item.passWord === userPassword){
-                userLogin = {name:userName, password:userPassword}
+        db.forEach((item) => {
+            let salt = bcrypt.genSaltSync(12);
+            let passwordEncript = bcrypt.hashSync(userPassword, salt)
+            let passwordComparete = bcrypt.compareSync(userPassword, passwordEncript)
+            if (item.name === userName && passwordComparete) {
+                userLogin = { name: userName, type: item.type }
                 console.log(userLogin);
             }
-            window.sessionStorage.setItem("userLogged", JSON.stringify(userLogin)) 
+            window.sessionStorage.setItem("userLogged", JSON.stringify(userLogin ? userLogin : undefined))
         })
     }
 
-    console.log(window.sessionStorage.getItem("userLogged"))
-    
-
-    return(
-        <>
-            <form onSubmit={(e)=>{verifySession(e)}}>
-                <label htmlFor="usernameInput">
-                    Username
-                    <input
-                    id="usernameInput"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                    type="text"
-                    placeholder="name"
-                    className="input"
-                    />
-                </label>
-                <br></br>
-                <label htmlFor="userpasswordInput">
-                    Password
-                    <input
-                    id="userpasswordInput"
-                    value={userPassword}
-                    onChange={(e) => setUserPassword(e.target.value)}
-                    type="password"
-                    placeholder="name"
-                    className="input"
-                    />
-                </label>
-                <button type='submit'>Send</button>
-            </form>
-        </>
+    return (
+        <div className='main-login'>
+            <div className='login-content' >
+                <h1>Login</h1>
+                <form onSubmit={(e) => { verifySession(e) }}>
+                    <label htmlFor="usernameInput">
+                        Username
+                        <input
+                            id="usernameInput"
+                            value={userName}
+                            onChange={(e) => setUserName(e.target.value)}
+                            type="text"
+                            placeholder="name"
+                            className="input"
+                        />
+                    </label>
+                    <br></br>
+                    <label htmlFor="userpasswordInput">
+                        Password
+                        <input
+                            id="userpasswordInput"
+                            value={userPassword}
+                            onChange={(e) => setUserPassword(e.target.value)}
+                            type="password"
+                            placeholder="name"
+                            className="input"
+                        />
+                    </label>
+                    <button type='submit'>Send</button>
+                </form>
+            </div>
+        </div>
     )
 
-    
+
 }
 
 export default Login

@@ -1,4 +1,5 @@
+
 export default interface User{
     name:string
-    password:string
+    type:string
 }
