@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ItemProps from '../../../models/Item'
 import ModalEdit from './Modal/ModalEdit/ModalEdit' 
 
-let CartProduct: React.FC<ItemProps> = ({...arg})=>{
+let CartItem: React.FC<ItemProps> = ({...arg})=>{
     const [ validaionEdit, setValidaionEdit ] = useState(false)
 
     return(
@@ -33,4 +33,4 @@ let CartProduct: React.FC<ItemProps> = ({...arg})=>{
     )
 }
 
-export default CartProduct
+export default CartItem
