@@ -1,8 +1,8 @@
 import * as React from 'react'
-import CartProduct from './CartProduct/CartProduct'
+import CartItem from './CartItem/CartItem'
 import Item from '../../models/Item'
 
-function ProductsUsers() {
+function ItemsUsers() {
     const [data, setData] = React.useState(Array<Item>)
     const [pagination, setPagination] = React.useState(0)
     const [pageSize, setPageSize] = React.useState(8)
@@ -26,7 +26,7 @@ function ProductsUsers() {
                 {
                     data.length > 0 ? data.map((item) => {
                         return (
-                            <CartProduct
+                            <CartItem
                                 key={item.id}
                                 condition={item.condition}
                                 connection_type={item.connection_type}
@@ -50,4 +50,4 @@ function ProductsUsers() {
     )
 }
 
-export default ProductsUsers
+export default ItemsUsers

@@ -1,4 +1,4 @@
-import ProductsUsers from '../ProductsUsers/ProductsUsers'
+import ProductsUsers from '../ItemsUsers/ItemsUsers'
 import Login from '../Login/Login'
 import { useEffect } from 'react';
 
