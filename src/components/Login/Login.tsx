@@ -26,7 +26,7 @@ function Login() {
         <div className='main-login'>
             <div className='login-content' >
                 <h1>Login</h1>
-                <form onSubmit={(e) => { verifySession(e) }}>
+                <form className='content-login' onSubmit={(e) => { verifySession(e) }}>
                     <label htmlFor="usernameInput">
                         Username
                         <input
@@ -46,11 +46,11 @@ function Login() {
                             value={userPassword}
                             onChange={(e) => setUserPassword(e.target.value)}
                             type="password"
-                            placeholder="name"
+                            placeholder="password"
                             className="input"
                         />
                     </label>
-                    <button type='submit'>Send</button>
+                    <button className='buttton buttton-login' type='submit'>Send</button>
                 </form>
             </div>
         </div>

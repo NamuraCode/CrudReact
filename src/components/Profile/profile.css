@@ -1,0 +1,144 @@
+@import url('./ModalCreate/modalCreate.css');
+
+.main-profile {
+    position: fixed;
+    right: 0;
+    display: flex;
+    padding: 0 0 0 0;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: linear-gradient(0deg, #456ee8, #18b0ec);
+    background-size: 400% 400%;
+    animation: AnimationName 4s ease infinite;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+}
+
+.profile-content img {
+    width: 100%;
+    border-radius: 50%;
+    border: 6px solid white;
+}
+
+.content-manager {
+    display: flex;
+    padding-top: 10%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttton {
+    border: none;
+    padding: 10px 60px;
+    border-radius: 30px;
+    font-size: 18px;
+    background-color: var(--backgroundSearch);
+    transition: all .1s ease-in-out;
+    color: black;
+}
+
+.buttton:hover {
+    transform: scale(1.06);
+    background-color: var(--backgroungColor2);
+    color: var(--backgroundSearch);
+}
+
+.buttton:active {
+    transform: scale(1.02);
+    background-color: var(--backgroundSearch);
+    color: black;
+}
+
+.content-city {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0px;
+}
+
+.content-create{
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden-profile{
+    display: none !important;
+    
+}
+
+.close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    border-radius: 50%;
+    transition: all .1s ease-in-out;
+    pointer-events: all !important;
+}
+
+.close:active{
+    transform: scale(1.02);
+}
+
+.rotate{
+    transform: rotate(225deg);
+}
+
+@media (min-width: 1024px) {
+    .content-manager{
+        padding-top: 40%;
+    }
+    .main-profile{
+        width: 20% !important;
+        background: linear-gradient(0deg, #456ee8, #18b0ec);
+        background-size: 400% 400%;
+        animation: AnimationName 4s ease infinite;
+        pointer-events: all !important;
+    }
+    .close{
+        display: none;
+    }
+
+    .profile-content{
+        background: transparent;
+    }
+    .profile-content img{
+        width: 50%;
+    }
+    .button-create{
+        padding: 10px 40px !important;
+    }
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@keyframes fadeInRightBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(2000px, 0, 0);
+        transform: translate3d(2000px, 0, 0);
+    }   
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}

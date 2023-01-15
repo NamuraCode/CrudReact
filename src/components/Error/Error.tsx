@@ -1,7 +1,10 @@
+import Header from '../../utils/Header/Header'
+
 function Error(){
     return(
-        <>
-            <h1>Error 404</h1>
+        <>  
+            <div>Error 404</div>
+            <Header/>
         </>
     )
 }

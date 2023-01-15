@@ -1,0 +1,93 @@
+.create-content{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.modal-create{
+    position: absolute;
+    top: 14%;
+    left: 30%;
+    display: flex;
+    width: 40%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    z-index: 2;
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+}
+
+.main-create{
+    display: flex;
+    width: 100%;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 40px 20px 40px !important;
+    background: rgba( 24, 176, 236, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11.5px );
+    -webkit-backdrop-filter: blur( 11.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+}
+
+.create-title{
+    position: absolute;
+    top: -16%;
+    z-index: 4;
+}
+
+.create-content label{
+    margin-bottom: 2px;
+}
+
+.create-content input, .create-content select {
+    height: 20px;
+    padding-left: 8px;
+    border-radius: 5px;
+    border: 0.2px solid gray
+}
+
+.button-create-model{
+    margin-top: 20px;
+    padding: 8px 20px !important; 
+    border-radius: 5px !important;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .main-create{
+        width: 100%;
+    }
+    .modal-create{
+        position: absolute;
+        top: 10;
+        width: 100%;
+        left: -100%;
+    }
+    .create-title{
+        position: absolute;
+        top: -4%;
+        z-index: 4;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        opacity: 0.8;
+        -webkit-transform: none;
+        transform: none;
+    }
+} 

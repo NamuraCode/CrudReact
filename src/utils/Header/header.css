@@ -1,0 +1,65 @@
+.main-header{
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .main-header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 5%;
+        height: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        background-color: var(--background);
+        animation-name: fadeInLeft;
+        animation-duration: 1s;
+        z-index: 3;
+        animation-fill-mode: both;
+    }
+
+    @keyframes fadeInLeft {
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    } 
+
+    .header-nav{
+        padding-top: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-dashboard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        object-fit: contain;
+        transition: all .1s ease-in-out ;
+    }
+
+    .nav-dashboard:hover{
+        transform: scale(1.15);
+    }
+
+    .nav-dashboard:active{
+        transform: scale(1.02);
+    }
+
+    .dashboard-image{
+        width: 100%;
+    }
+
+}

@@ -1,17 +1,17 @@
 
-export default interface Item{
+export default interface ItemCreate{
     condition?:string
     connection_type?:string
     created_at?:string
-    i_b?:number
-    i_max?:number
-    i_n?:number
-    id:number
+    i_b?:string
+    i_max?:string
+    i_n?:string
+    id?:string
     location?:string
     manufacturer?:string
     owner:string
     purchase?:string
-    seals?:number
+    seals?:string
     serial:string
     storage_system?:string
 }
