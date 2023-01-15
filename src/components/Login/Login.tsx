@@ -14,7 +14,6 @@ function Login() {
     },[])
 
     function verifySession(event: React.SyntheticEvent<HTMLFormElement>) {
-        event.preventDefault()
         let userLogin: User
         db.forEach((item) => {
             let salt = bcrypt.genSaltSync(12);
