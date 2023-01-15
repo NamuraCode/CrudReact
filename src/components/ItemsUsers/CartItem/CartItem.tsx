@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemProps from '../../../models/Item'
+import ModalDelete from './Modal/ModalDelete/ModalDelete';
 import ModalEdit from './Modal/ModalEdit/ModalEdit' 
 
-let CartProduct: React.FC<ItemProps> = ({...arg})=>{
+let CartItem: React.FC<ItemProps> = ({...arg})=>{
     const [ validaionEdit, setValidaionEdit ] = useState(false)
+    const [ validaionDelete, setValidaionDelete ] = useState(false)
 
     return(
-        <div>   
+        <div className='main-cart'>  
             <h2>{arg.owner}</h2>
             <h3>{arg.serial}</h3>
             <div>
@@ -23,14 +25,17 @@ let CartProduct: React.FC<ItemProps> = ({...arg})=>{
                 <h3>{arg.connection_type}</h3>
             </div>
             <button onClick={()=>{
-                setValidaionEdit(true)
+                setValidaionDelete(false)
+                validaionEdit ? setValidaionEdit(false) : setValidaionEdit(true) 
             }}>Edit</button>
-            <button>Delet</button>
-            {
-               validaionEdit ?  <ModalEdit/> : null
-            }
+            <button onClick={()=>{
+                setValidaionEdit(false)
+                validaionDelete ? setValidaionDelete(false) : setValidaionDelete(true)
+            }}>Delet</button>
+            { validaionEdit && !validaionDelete ? <ModalEdit id={arg.id}/> : null }
+            { validaionDelete && !validaionEdit ? <ModalDelete id={arg.id}/> : null }
         </div>
     )
 }
 
-export default CartProduct
+export default CartItem
