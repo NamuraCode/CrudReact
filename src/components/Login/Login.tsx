@@ -36,6 +36,7 @@ function Login() {
                             type="text"
                             placeholder="name"
                             className="input"
+                            required
                         />
                     </label>
                     <br></br>
@@ -48,6 +49,7 @@ function Login() {
                             type="password"
                             placeholder="password"
                             className="input"
+                            required
                         />
                     </label>
                     <button className='buttton buttton-login' type='submit'>Send</button>
