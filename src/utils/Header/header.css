@@ -45,13 +45,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50%;
+        width: 100%;
+        padding: 15px;
         object-fit: contain;
         transition: all .1s ease-in-out ;
     }
 
     .nav-dashboard:hover{
-        transform: scale(1.15);
+        transform: scale(1.04);
     }
 
     .nav-dashboard:active{

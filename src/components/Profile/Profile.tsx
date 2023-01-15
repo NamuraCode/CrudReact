@@ -1,19 +1,14 @@
-import { LegacyRef, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import managerImage from '../../assets/images/Avatar.svg'
 import ModalCreate from './ModalCreate/ModalCreate'
-import userInterface from '../../models/User'
+import userInterface from '../../models/getUserSession'
 import closeImage from '../../assets/images/Close.svg'
 
 function Profile(){
     const close = useRef<HTMLInputElement>(null!)
     const modal = useRef<HTMLDivElement>(null!)
     const [activeCreate, setActiveCreate] = useState(false)
-    let sessionUser = window.sessionStorage.getItem("userLogged")
-    let defaultUser:userInterface = {
-        name:"User",
-        type:"user"
-    }
-    let userObject: userInterface = JSON.parse(sessionUser ? sessionUser : JSON.stringify(defaultUser))
+    let userObject = userInterface
 
     useEffect(()=>{
         close.current.focus()
@@ -42,7 +37,7 @@ function Profile(){
                     >Add Item</button>
                     <div ref={modal}>
                         {
-                            activeCreate ? <ModalCreate></ModalCreate> : null
+                            activeCreate &&  userObject.type == "admin" ? <ModalCreate></ModalCreate> : null
                         }
                     </div>
                 </article>

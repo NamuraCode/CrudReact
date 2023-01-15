@@ -76,9 +76,8 @@ let ModalEdit: React.FC<ItemProps> = ({id})=>{
     }
 
     return(
-        <div>
-            <h1>{id ? id : 1}</h1>
-            <h1>Edit</h1>
+        <div className='main-form-edit'>
+            <h1>Edit Item</h1>
             <form className='form main-edit' onSubmit={(event) => { editItem(event, id) }}>
                 <section className='edit-content'>
                     <label htmlFor="serialInput">Serial:</label>
@@ -202,7 +201,7 @@ let ModalEdit: React.FC<ItemProps> = ({id})=>{
                         required
                     />
                 </section>
-                <button type='submit'>Save</button>
+                <button className='buttton button-edit' type='submit'>Save</button>
             </form>
         </div>
     )

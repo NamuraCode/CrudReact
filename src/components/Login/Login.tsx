@@ -4,11 +4,14 @@ import db from '../../data/users.json'
 import User from '../../models/User'
 
 function Login() {
-
+    const loginMain = React.useRef<HTMLDivElement>(null!)
     const [userName, setUserName] = React.useState("")
     const [userPassword, setUserPassword] = React.useState("")
     const [userNoFind, setUserNoFind] = React.useState(false)
 
+    React.useEffect(()=>{
+        loginMain.current.focus()
+    },[])
 
     function verifySession(event: React.SyntheticEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -22,6 +25,7 @@ function Login() {
                 console.log(passwordComparete);
                 userLogin = { name: userName, type: item.type }
                 console.log(userLogin);
+                loginMain.current.classList.add('hidden-login')
                 window.sessionStorage.setItem("userLogged", JSON.stringify(userLogin ? userLogin : undefined))
             }else{
                 setUserNoFind(true)
@@ -30,7 +34,7 @@ function Login() {
     }
 
     return (
-        <div className='main-login'>
+        <div ref={loginMain} className='main-login'>
             { userNoFind ?  <p className='login-content' onClick={()=>{setUserNoFind(false)}}>Try Again</p> :
                 <div className='login-content' >
                     <h1>Login</h1>

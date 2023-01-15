@@ -1,0 +1,35 @@
+.form-delete{
+    position: absolute;
+    top: -284%;
+    left: 29%;
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    background: var(--backgroundGradientContent);
+    animation: AnimationName 4s ease infinite;
+    background-size: 400% 400%;
+    color: white;
+    z-index: 2;
+}
+
+.form-delete::after{
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    width: 50px;
+    height: 50px;
+    background: var(--backgroundGradientContent);
+    animation: AnimationName 4s ease infinite;
+    background-size: 400% 400%;
+    z-index: -1;
+    transform: rotate(140deg);
+}
+
+@keyframes backgroundA {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}

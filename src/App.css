@@ -3,6 +3,10 @@
 @import url("./components/ItemsUsers//ItemsUsers.css"); 
 @import url("./components/Profile/profile.css"); 
 @import url("./utils/Header/header.css"); 
+@import url("./components/Error/error.css"); 
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto+Condensed:ital,wght@0,300;0,400;1,700&family=Roboto:ital,wght@1,500&display=swap');
+
 
 :root{
     --background: #FFFFFF;
@@ -12,13 +16,17 @@
     --backgroungColor2: #18b0ec;
     --backgroundGradientContent: linear-gradient(90deg, #456ee8 0%, #18b0ec 100%);
     --backgorundImage: url('./assets/images/waves.svg');
+    --roboto: 'Roboto Condensed, cursive, sans-serif, sans-serif';
+
+
 }
 
 .App{
+    font-family: 'Roboto', sans-serif;;
     position: relative !important;
     width: 100%;
     height: 100%;
     background-color: var(--background);
     color: var(--background);
-    font-size: 16px;
+    font-size: 18px;
 }

@@ -1,4 +1,4 @@
-.main-login{
+.main-login {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -11,24 +11,24 @@
     z-index: 4;
 }
 
-.main-login::after{
+.main-login::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 200%;
     height: 200%;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
     pointer-events: all;
     z-index: 3;
 }
 
-.login-content{
+.login-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,11 +38,12 @@
     padding: 20px;
     width: 58%;
     height: 70%;
+    animation: fadeIn .9s ease 0s 1 normal forwards;
     pointer-events: all;
     z-index: 4;
 }
 
-.content-login{
+.content-login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +52,7 @@
 
 }
 
-.content-login label{
+.content-login label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +60,7 @@
     width: 100;
 }
 
-.content-login input{
+.content-login input {
     height: 20px;
     width: 100%;
     margin-top: 10px;
@@ -68,22 +69,22 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.buttton-login{
+.buttton-login {
     margin-top: 40px;
     padding: 8px 30px !important;
 }
 
 
 @media (min-width: 1024px) {
-    .login-content{
+    .login-content {
         width: 30% !important;
     }
 
-    .buttton{
+    .buttton {
         padding: 10px 60px !important;
     }
 
-    .buttton-login{
+    .buttton-login {
         margin-top: 40px;
         border-radius: 6px !important;
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -91,5 +92,68 @@
         font-size: 16px;
         width: 38%;
         text-transform: lowercase;
+    }
+
+    .hidden-login {
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-name: fadeOutUp;
+    }
+
+    .hidden-login::after {
+        display: none !important;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
     }
 }

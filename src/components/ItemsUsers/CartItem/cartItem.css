@@ -1,3 +1,7 @@
+@import url('./Modal/ModalDelete/modalDelete.css');
+@import url('./Modal/ModalEdit/modalEdit.css');
+
+
 .main-cart{
     display: flex;
     align-items: center;
@@ -7,4 +11,28 @@
     background-color: var(--background);
     color: black;
     
+}
+
+.buttons-form{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.form-buttons{
+    padding: 0px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    transition: all .2s ease-in-out ;
+}
+
+.form-buttons:hover{
+    transform: scale(1.2);
+}
+
+.form-buttons:active{
+    transform: scale(1.1);
 }
