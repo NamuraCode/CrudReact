@@ -64,11 +64,13 @@
     width: 100%;
     margin-top: 10px;
     padding-left: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .buttton-login{
     margin-top: 40px;
-    padding: 8px 40px !important;
+    padding: 8px 30px !important;
 }
 
 
@@ -79,5 +81,15 @@
 
     .buttton{
         padding: 10px 60px !important;
+    }
+
+    .buttton-login{
+        margin-top: 40px;
+        border-radius: 6px !important;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 8px 20px !important;
+        font-size: 16px;
+        width: 38%;
+        text-transform: lowercase;
     }
 }
