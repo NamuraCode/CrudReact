@@ -20,7 +20,7 @@ let ModalDelete: React.FC<PropId> = ({id})=>{
             <form onSubmit={(e)=>{
                 deletItemId(e, id)
             }}>
-                <button type='submit'></button>
+                <button type='submit'>Accept</button>
                 <button type='reset'>cancel</button>
             </form>
         </div>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import CartItem from './CartItem/CartItem'
 import Item from '../../models/Item'
-import arrow from '../../assets/images/arrow.svg'
+import arrow from '../../assets/images/arrow2.svg'
 
 function ItemsUsers() {
     const [data, setData] = React.useState(Array<Item>)

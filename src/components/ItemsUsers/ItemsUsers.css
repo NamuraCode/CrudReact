@@ -66,6 +66,7 @@
     background-color: rgba(0, 0, 0, 0.08);
     z-index: 2;
     pointer-events: all;
+    overflow: hidden;
 }
 
 .pagination-main{
@@ -81,6 +82,7 @@
 
 .main-pagination-current{
     color: rgba(0, 0, 0, 0.8);
+    margin: 0 !important;
 }
 
 @media (min-width: 1024px){
